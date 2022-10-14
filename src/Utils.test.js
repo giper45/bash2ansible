@@ -1,7 +1,7 @@
-import Add, { splitLine, arrayWithoutCommand, splitBash} from './Utils'
-import * as mkdir from './commands/Echo'
+import Add, { splitLine, arrayWithoutCommand, splitBash, isRelative, getFilenameFromUrl} from './Utils'
+import * as mkdir from './commands/Mkdir'
 var ansibleMkdir = `
-- name: mkdir test
+- name: mkdir {{ansible_env.HOME}}/test
   file:
     path: "{{ansible_env.HOME}}/test"
     state: directory
@@ -32,3 +32,13 @@ test('isMkdir', () => {
 test('mkdir', () => {
     expect(mkdir.to("mkdir test")).toBe(ansibleMkdir)
 });
+
+
+test('path relative', () => {
+    expect(isRelative("test")).toBe(true)
+    expect(isRelative("/test")).toBe(false)
+})
+
+test('filename from url', () => {
+expect(getFilenameFromUrl("https://github.com/containerd/nerdctl/releases/download/v0.23.0/nerdctl-full-0.23.0-linux-amd64.tar.gz")).toBe("nerdctl-full-0.23.0-linux-amd64.tar.gz")
+})

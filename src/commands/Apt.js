@@ -3,10 +3,10 @@ import * as u from '../Utils'
 const ansibleString = (packages) => {
 console.log(packages)
 return `
-- name: Install a list of packages
+- name: Install packages
   apt:
     pkg:
-    ${packages}
+${u.arrayToOptions(packages)}
 `
 }
 
@@ -20,12 +20,14 @@ export function to(command, remotePath = null) {
     var cmdArr = u.arrayWithoutCommand(u.splitLine(command))
     // install, remove, update ...
     var option = cmdArr[0]
-    if (option == "install") {
+    if (option === "install") {
         console.log("Install mode")
         // second
         cmdArr = u.arrayWithoutCommand(cmdArr)
         var packages = u.splitLine(cmdArr.join(' '))
+        packages = packages.filter((value, index, arr) => value !== "-y")
         console.log(packages)
+        // Replace -y 
         // Join all the elements in the string
         return ansibleString(packages)
     }

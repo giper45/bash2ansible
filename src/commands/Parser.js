@@ -1,6 +1,8 @@
+import * as cd from './Cd'
 import * as echo from './Echo'
 import * as apt from './Apt'
 import * as mkdir from './Mkdir'
+import * as wget from './Wget'
 import * as u from '../Utils'
 
 
@@ -17,6 +19,10 @@ export function parse(command, params = null) {
         toCmd = echo.is(command) ? echo.to : null;
     if (!toCmd)
         toCmd = apt.is(command) ? apt.to : null;
+    if (!toCmd)
+        toCmd = cd.is(command) ? cd.to : null;
+    if (!toCmd)
+        toCmd = wget.is(command) ? wget.to : null;
 
 
 

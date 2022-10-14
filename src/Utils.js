@@ -1,5 +1,33 @@
-function ansibleHomeVariable() {
-    return "ansible_env.HOME"
+// function ansibleHomeVariable() {
+//     return "ansible_env.HOME"
+// }
+/**
+ * Generate tabs (consider two space tabs)
+ * @param  {int} noTabs : the number of tags
+ */
+
+// Default currentFolder
+export let currentFolder = "{{ansible_env.HOME}}"
+
+export function getFilenameFromUrl(url) {
+    return url.split('/').pop()
+
+}
+
+export function setCurentFolder(f) {
+    currentFolder = f;
+}
+
+export function isRelative(p) {
+    return  !p.startsWith("/")
+}
+
+
+export function genTab(noTabs) {
+    let t = "";
+    for (let i = 0; i < noTabs; i++)
+        t = t + "    ";
+    return t;
 }
 
 
@@ -38,5 +66,15 @@ export function arrayWithoutCommand(arr) {
 // COMMANDS
 export function isCommand(command, expected) {
     let arr = splitLine(command)
-    return arr[0] == expected
+    return arr[0] === expected
+}
+
+export function arrayToOptions(arr) {
+    let tabs = genTab(1)
+    let ret = ""
+    arr.forEach(a => {
+        ret +=  tabs + "- " + a + "\n"
+        
+    })
+    return ret
 }

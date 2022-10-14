@@ -1,11 +1,14 @@
 import * as u from '../Utils'
 
-const ansibleString = (path, remotePath = null) => {
-    const basePath = remotePath ? remotePath : "{{ansible_env.HOME}}";
+const ansibleString = (path) => {
+    // If the path is absolute, use the full path
+    console.log(u.isRelative(path))
+    let thePath = u.isRelative(path) ? `${u.currentFolder}/${path}` : path
+    console.log(thePath)
 return `
-- name: mkdir ${basePath}/${path}
+- name: mkdir ${thePath}
   file:
-    path: "${basePath}/${path}"
+    path: "${thePath}"
     state: directory
     mode: '0755'
 `;
@@ -17,9 +20,9 @@ export function is(command) {
 
 }
 
-export function to(command, remotePath = null) {
+export function to(command) {
     var cmdArr = u.arrayWithoutCommand(u.splitLine(command))
     if (cmdArr.length === 1) {
-        return ansibleString(cmdArr[0], remotePath)
+        return ansibleString(cmdArr[0])
     }
 }

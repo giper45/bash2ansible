@@ -8,6 +8,16 @@ import {parseLines} from './commands/Parser'
 
 
 class Converter extends Component {
+  // When the enter is pressed
+  onEnterPress = (e) => {
+    if(e.keyCode == 13 && e.shiftKey == false) {
+      let ansibleString = parseLines(e.target.value)
+      console.log(e.target.value)
+      this.setState({
+        ansibleCode: ansibleString
+      })
+    }
+  }
 
   state = {
     bashCode: "#!/bin/bash\n",
@@ -15,11 +25,6 @@ class Converter extends Component {
     copied: false
   }
   handleChange = (e) => {
-    let ansibleString = parseLines(e.target.value)
-    console.log(ansibleString)
-    this.setState({
-      ansibleCode: ansibleString
-    })
   }
 
   render() {
@@ -29,14 +34,14 @@ class Converter extends Component {
         <div className="row">
           <div className="col-6 col-md-6">
             <div className="form-floating">
-              <textarea onChange={this.handleChange} className="form-control" id="floatingTextareaLeft" defaultValue={this.state.bashCode}></textarea>
-              <label htmlFor="floatingTextareaLeft"><img className="smallLogo" src="bash2ansible/img/bashLogo.png" /></label>
+              <textarea onChange={this.handleChange} onKeyDown={this.onEnterPress} className="form-control" id="floatingTextareaLeft" defaultValue={this.state.bashCode}></textarea>
+              <label htmlFor="floatingTextareaLeft"><img className="smallLogo" src="bash2ansible/img/bashLogo.png" alt="bashLogo" /></label>
             </div>
           </div>
           <div className="col-6 col-md-6 border-left">
             <div className="form-floating">
               <textarea className="form-control" id="floatingTextareaRight" value={this.state.ansibleCode} disabled></textarea>
-              <label htmlFor="floatingTextareaLeft"><img className="smallLogo" src="bash2ansible/img/ansibleLogo.png" /></label>
+              <label htmlFor="floatingTextareaLeft"><img className="smallLogo" src="bash2ansible/img/ansibleLogo.png" alt="ansibleLogo" /></label>
             </div>
           </div>
 
