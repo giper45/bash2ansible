@@ -1,0 +1,46 @@
+::-webkit-scrollbar {
+    width: 8px;               /* width of the entire scrollbar */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #ddd;        /* color of the tracking area */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--bs-secondary);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 2px solid var(--bs-secondary);  /* creates padding around scroll thumb */
+  }
+
+  .navbar{
+    margin-bottom:10px;
+    background-color:#563d7c!important;
+  }
+  .border-left{
+      border-left:2px solid #ddd;
+  }
+  .form-floating>.form-control:not(:placeholder-shown){
+    padding-top: 3.5em; 
+  }
+  textarea{
+      min-height:calc(100vh - 130px)!important;
+  }
+  .tools{
+      float:right;
+      padding:10px;
+  }
+  .smallLogo{
+    height:50px;
+  }
+  #floatingTextareaLeft{
+    background-color:#222;
+    color: white;
+  }
+  #footer{
+    padding:5px;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    text-align:right;
+    background-color:#563d7c;
+  }

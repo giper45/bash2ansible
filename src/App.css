@@ -1,0 +1,85 @@
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+} */
+/* 
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+::-webkit-scrollbar {
+    width: 8px;               /* width of the entire scrollbar */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #ddd;        /* color of the tracking area */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--bs-secondary);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 2px solid var(--bs-secondary);  /* creates padding around scroll thumb */
+  }
+
+  .navbar{
+    margin-bottom:10px;
+    background-color:#563d7c!important;
+  }
+  .border-left{
+      border-left:2px solid #ddd;
+  }
+  .form-floating>.form-control:not(:placeholder-shown){
+    padding-top: 3.5em!important; 
+  }
+  textarea{
+      min-height:calc(100vh - 130px)!important;
+  }
+  .tools{
+      float:right;
+      padding:10px;
+  }
+  .smallLogo{
+    height:50px;
+  }
+  #floatingTextareaLeft{
+    background-color:#222;
+    color: white;
+  }
+  #footer{
+    padding:5px;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    text-align:right;
+    background-color:#563d7c;
+  }
