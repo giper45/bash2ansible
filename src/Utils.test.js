@@ -1,8 +1,8 @@
 import Add, { splitLine, arrayWithoutCommand, splitBash} from './Utils'
-import * as mkdir from './commands/Mkdir'
+import * as mkdir from './commands/Echo'
 var ansibleMkdir = `
 - name: mkdir test
-  ansible.builtin.file:
+  file:
     path: "{{ansible_env.HOME}}/test"
     state: directory
     mode: '0755'

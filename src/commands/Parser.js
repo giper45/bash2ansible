@@ -1,3 +1,5 @@
+import * as echo from './Echo'
+import * as apt from './Apt'
 import * as mkdir from './Mkdir'
 import * as u from '../Utils'
 
@@ -11,6 +13,13 @@ import * as u from '../Utils'
 export function parse(command, params = null) {
     let toCmd = null;
     toCmd = mkdir.is(command) ? mkdir.to : null;
+    if (!toCmd)
+        toCmd = echo.is(command) ? echo.to : null;
+    if (!toCmd)
+        toCmd = apt.is(command) ? apt.to : null;
+
+
+
     if  (toCmd) {
         return toCmd(command, params)
     } else {
