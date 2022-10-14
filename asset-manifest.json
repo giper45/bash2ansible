@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/bash2ansible/static/css/main.073c9b0a.css",
+    "main.js": "/bash2ansible/static/js/main.b27c1d75.js",
+    "static/js/787.e7f3315e.chunk.js": "/bash2ansible/static/js/787.e7f3315e.chunk.js",
+    "static/media/logo.svg": "/bash2ansible/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/bash2ansible/index.html",
+    "main.073c9b0a.css.map": "/bash2ansible/static/css/main.073c9b0a.css.map",
+    "main.b27c1d75.js.map": "/bash2ansible/static/js/main.b27c1d75.js.map",
+    "787.e7f3315e.chunk.js.map": "/bash2ansible/static/js/787.e7f3315e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.b27c1d75.js"
+  ]
+}
