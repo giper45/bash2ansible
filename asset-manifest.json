@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/bash2ansible/static/css/main.e83cff3b.css",
-    "main.js": "/bash2ansible/static/js/main.355e4102.js",
+    "main.js": "/bash2ansible/static/js/main.bb3e2888.js",
     "static/js/787.e7f3315e.chunk.js": "/bash2ansible/static/js/787.e7f3315e.chunk.js",
     "static/media/notification.svg?s3g3t9": "/bash2ansible/static/media/notification.5d0158671dd860c714c4.svg",
     "static/media/notification.eot": "/bash2ansible/static/media/notification.3657084dc0419605a91c.eot",
@@ -9,11 +9,11 @@
     "static/media/notification.ttf?s3g3t9": "/bash2ansible/static/media/notification.c5d9251ea82e42f75381.ttf",
     "index.html": "/bash2ansible/index.html",
     "main.e83cff3b.css.map": "/bash2ansible/static/css/main.e83cff3b.css.map",
-    "main.355e4102.js.map": "/bash2ansible/static/js/main.355e4102.js.map",
+    "main.bb3e2888.js.map": "/bash2ansible/static/js/main.bb3e2888.js.map",
     "787.e7f3315e.chunk.js.map": "/bash2ansible/static/js/787.e7f3315e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e83cff3b.css",
-    "static/js/main.355e4102.js"
+    "static/js/main.bb3e2888.js"
   ]
 }
