@@ -9,6 +9,10 @@
 // Default currentFolder
 export let currentFolder = "{{ansible_env.HOME}}"
 
+export function userHome() {
+    return "{{ansible_env.HOME}}"
+}
+
 export function getFilenameFromUrl(url) {
     return url.split('/').pop()
 
@@ -78,3 +82,9 @@ export function arrayToOptions(arr) {
     })
     return ret
 }
+
+export function convertPath(p) {
+    return isRelative(p) ? currentFolder + "/" + p : p;
+}
+
+

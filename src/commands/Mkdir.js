@@ -2,8 +2,7 @@ import * as u from '../Utils'
 
 const ansibleString = (path) => {
     // If the path is absolute, use the full path
-    console.log(u.isRelative(path))
-    let thePath = u.isRelative(path) ? `${u.currentFolder}/${path}` : path
+    let thePath = u.convertPath(path)
     console.log(thePath)
 return `
 - name: mkdir ${thePath}

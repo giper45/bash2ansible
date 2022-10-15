@@ -11,7 +11,7 @@ export function to(command) {
     console.log(u.currentFolder)
     // If it relative, move to the relative folder
     if (currentFolder)
-    {
+    { 
         if (u.isRelative(currentFolder)) {
             currentFolder = u.currentFolder + "/" + currentFolder
         }

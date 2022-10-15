@@ -35,13 +35,13 @@ class Converter extends Component {
           <div className="col-6 col-md-6">
             <div className="form-floating">
               <textarea onChange={this.handleChange} onKeyDown={this.onEnterPress} className="form-control" id="floatingTextareaLeft" defaultValue={this.state.bashCode}></textarea>
-              <label htmlFor="floatingTextareaLeft"><img className="smallLogo" src="bash2ansible/img/bashLogo.png" alt="bashLogo" /></label>
+              <label htmlFor="floatingTextareaLeft"><img className="smallLogo" src="/bash2ansible/img/bashLogo.png" alt="bashLogo" /></label>
             </div>
           </div>
           <div className="col-6 col-md-6 border-left">
             <div className="form-floating">
               <textarea className="form-control" id="floatingTextareaRight" value={this.state.ansibleCode} disabled></textarea>
-              <label htmlFor="floatingTextareaLeft"><img className="smallLogo" src="bash2ansible/img/ansibleLogo.png" alt="ansibleLogo" /></label>
+              <label htmlFor="floatingTextareaLeft"><img className="smallLogo" src="/bash2ansible/img/ansibleLogo.png" alt="ansibleLogo" /></label>
             </div>
           </div>
 

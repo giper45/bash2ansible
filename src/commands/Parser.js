@@ -4,7 +4,12 @@ import * as apt from './Apt'
 import * as mkdir from './Mkdir'
 import * as wget from './Wget'
 import * as u from '../Utils'
-
+import * as unarchive from './Unarchive'
+import * as pip from './Pip'
+import * as cp from './Copy'
+import * as template from './Template'
+import * as link from './Link'
+import * as alias from './Alias'
 
 /**
  * parse a single command.
@@ -23,6 +28,18 @@ export function parse(command, params = null) {
         toCmd = cd.is(command) ? cd.to : null;
     if (!toCmd)
         toCmd = wget.is(command) ? wget.to : null;
+    if (!toCmd)
+        toCmd = unarchive.is(command) ? unarchive.to : null;
+    if (!toCmd)
+        toCmd = pip.is(command) ? pip.to : null;
+    if (!toCmd)
+        toCmd = cp.is(command) ? cp.to : null;
+    if (!toCmd)
+        toCmd = template.is(command) ? template.to : null;
+    if (!toCmd)
+        toCmd = link.is(command) ? link.to : null;
+    if (!toCmd)
+        toCmd = alias.is(command) ? alias.to : null;
 
 
 
