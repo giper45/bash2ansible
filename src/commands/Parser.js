@@ -10,6 +10,8 @@ import * as cp from './Copy'
 import * as template from './Template'
 import * as link from './Link'
 import * as alias from './Alias'
+import * as git from './Git'
+import * as find from './Find'
 
 /**
  * parse a single command.
@@ -40,6 +42,10 @@ export function parse(command, params = null) {
         toCmd = link.is(command) ? link.to : null;
     if (!toCmd)
         toCmd = alias.is(command) ? alias.to : null;
+    if (!toCmd)
+        toCmd = git.is(command) ? git.to : null;
+    if (!toCmd)
+        toCmd = find.is(command) ? find.to : null;
 
 
 

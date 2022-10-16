@@ -7,7 +7,7 @@ theFile = theFile ? theFile : u.getFilenameFromUrl(url)
 theFile = u.isRelative(theFile) ? u.currentFolder + "/" + theFile : theFile
 return `
 - name: Download ${theFile}
-  ansible.builtin.get_url:
+  get_url:
     url: ${url}
     dest: ${theFile}
 `

@@ -84,6 +84,8 @@ export function arrayToOptions(arr) {
 }
 
 export function convertPath(p) {
+    if (!p)
+        return currentFolder;
     return isRelative(p) ? currentFolder + "/" + p : p;
 }
 
