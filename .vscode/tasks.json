@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "jsdoc",
+			"problemMatcher": [],
+			"label": "npm: jsdoc",
+			"detail": "jsdoc -r"
+		},
+		{
+			"type": "npm",
+			"script": "jsdoc-view",
+			"problemMatcher": [],
+			"label": "npm: jsdoc-view",
+			"detail": "live-server doc"
+		}
+	]
+}

@@ -10,7 +10,7 @@ import {parseLines} from './commands/Parser'
 class Converter extends Component {
   // When the enter is pressed
   onEnterPress = (e) => {
-    if(e.keyCode == 13 && e.shiftKey == false) {
+    if(e.keyCode === 13 && e.shiftKey === false) {
       let ansibleString = parseLines(e.target.value)
       console.log(e.target.value)
       this.setState({

@@ -1,4 +1,4 @@
-import Add, { splitLine, arrayWithoutCommand, splitBash, isRelative, getFilenameFromUrl} from './Utils'
+import Add, { splitLine, arrayWithoutCommand, splitBash, isRelative, getFilenameFromUrl, bash2AnsibleOption} from './Utils'
 import * as mkdir from './commands/Mkdir'
 var ansibleMkdir = `
 - name: mkdir {{ansible_env.HOME}}/test
@@ -41,4 +41,8 @@ test('path relative', () => {
 
 test('filename from url', () => {
 expect(getFilenameFromUrl("https://github.com/containerd/nerdctl/releases/download/v0.23.0/nerdctl-full-0.23.0-linux-amd64.tar.gz")).toBe("nerdctl-full-0.23.0-linux-amd64.tar.gz")
+})
+
+test("unix2ansible option", () => {
+    expect(bash2AnsibleOption("--system", "system").toBe("    "))
 })

@@ -12,6 +12,13 @@ import * as link from './Link'
 import * as alias from './Alias'
 import * as git from './Git'
 import * as find from './Find'
+import * as addUser from './Adduser'
+
+/**
+*
+Parser module
+@module Parser
+**/
 
 /**
  * parse a single command.
@@ -46,6 +53,8 @@ export function parse(command, params = null) {
         toCmd = git.is(command) ? git.to : null;
     if (!toCmd)
         toCmd = find.is(command) ? find.to : null;
+    if (!toCmd)
+        toCmd = addUser.is(command) ? addUser.to : null;
 
 
 
